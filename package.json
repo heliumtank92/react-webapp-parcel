@@ -4,8 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel public/index.html --lazy --open chrome --port 3000",
-    "build": "parcel build public/index.html"
+    "analyze": "parcel build public/index.html --reporter @parcel/reporter-bundle-analyzer;cp -r public/assets dist/assets",
+    "start": "parcel public/index.html --lazy --open chrome --port 3000;cp -r public/assets dist/assets",
+    "build": "parcel build public/index.html;cp -r public/assets dist/assets",
+    "build-script": "node scripts/build.mjs",
+    "start-script": "node scripts/start.mjs"
   },
   "keywords": [],
   "author": "",
@@ -15,12 +18,16 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "^2.8.3"
+    "@parcel/config-default": "^2.8.3",
+    "@parcel/core": "^2.8.3",
+    "@parcel/reporter-bundle-analyzer": "^2.8.3",
+    "@parcel/reporter-cli": "^2.8.3",
+    "parcel": "^2.8.3",
+    "parcel-transformer-ejs": "^1.0.1"
   },
   "alias": {
     "process": {
       "global": "{}"
     }
-  },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  }
 }

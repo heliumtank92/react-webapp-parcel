@@ -1,3 +1,9 @@
-export default function App () {
-  return <h1>Hello world12345!</h1>
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render () {
+    return (
+      <input type='radio' id='mountain' name='type' value='mountain' />
+    )
+  }
 }

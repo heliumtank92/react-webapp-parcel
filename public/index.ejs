@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    <% if (locals.APP_ENV_PRECONNECT_DOMAINS && locals.APP_ENV_PRECONNECT_DOMAINS.length) { %>
+      <% PRECONNECT_DOMAINS = locals.APP_ENV_PRECONNECT_DOMAINS.split(',') %>
+      <% PRECONNECT_DOMAINS.forEach(function(PRECONNECT_DOMAIN){ %>
+        <link rel="preconnect" href="<%= PRECONNECT_DOMAIN %>" />
+      <% }); %>
+    <% } %>
+
+    <title><%= locals.APP_ENV_TITLE %></title>
+    <meta name="description" content="<%= locals.APP_ENV_DESCRIPTION %>">
+    
+    <link rel="stylesheet" href="./assets/css/base.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="../src/index.js"></script>
+  </body>
+</html>
