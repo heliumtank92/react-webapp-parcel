@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "pnpm run clean-build && parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer && pnpm run move-assets",
     "start": "pnpm run clean-build && parcel public/index.ejs --open && pnpm run move-assets",
-    "build": "PARCEL_PLUGIN_STRUCTURIZE=true pnpm run clean-build && parcel build public/index.ejs && pnpm run move-assets",
+    "build": "pnpm run clean-build && parcel build public/index.ejs && pnpm run move-assets",
     "move-assets": "cp -r public/assets dist/assets",
     "clean-build": "rm -rf dist"
   },
