@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "parcel build public/index.html --reporter @parcel/reporter-bundle-analyzer;cp -r public/assets dist/assets",
-    "start": "parcel public/index.html --lazy --open chrome --port 3000;cp -r public/assets dist/assets",
-    "build": "parcel build public/index.html;cp -r public/assets dist/assets",
-    "build-script": "node scripts/build.mjs",
-    "start-script": "node scripts/start.mjs"
+    "analyze": "pnpm run clean-build && parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer && pnpm run move-assets",
+    "start": "pnpm run clean-build && parcel public/index.ejs --open && pnpm run move-assets",
+    "build": "PARCEL_PLUGIN_STRUCTURIZE=true pnpm run clean-build && parcel build public/index.ejs && pnpm run move-assets",
+    "move-assets": "cp -r public/assets dist/assets",
+    "clean-build": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
@@ -19,10 +19,12 @@
   },
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",
-    "@parcel/core": "^2.8.3",
+    "@parcel/packager-raw-url": "^2.8.3",
+    "@parcel/packager-xml": "^2.8.3",
     "@parcel/reporter-bundle-analyzer": "^2.8.3",
-    "@parcel/reporter-cli": "^2.8.3",
+    "custom-env": "^2.0.1",
     "parcel": "^2.8.3",
+    "parcel-config-pwa-manifest": "^0.1.2",
     "parcel-transformer-ejs": "^1.0.1"
   },
   "alias": {

@@ -1,0 +1,12 @@
+{
+  "name": "Parcel React App",
+  "shortName": "Parcel React App",
+  "startURL": "./",
+  "theme": "#000000",
+  "generateIconOptions": {
+    "baseIcon": "./public/assets/favicon.svg",
+    "sizes": [192, 384, 512],
+    "genFavicons": true
+  }
+}
+

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('custom-env').env(process.env.NODE_ENV)
 
 const envKeys = Object.keys(process.env)
 const filteredEnvKeys = envKeys.filter(key => /^APP_ENV_/i.test(key))
