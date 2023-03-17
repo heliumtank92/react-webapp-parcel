@@ -4,10 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "pnpm run clean && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer",
-    "start": "pnpm run clean && parcel public/index.ejs --dist-dir build --open",
-    "build": "pnpm run clean && parcel build public/index.ejs --dist-dir build",
-    "clean": "rm -rf build .parcel-cache"
+    "analyze": "pnpm run clean && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer && pnpm run copy",
+    "start": "pnpm run clean && parcel public/index.ejs --dist-dir build --open && pnpm run copy",
+    "build": "pnpm run clean && parcel build public/index.ejs --dist-dir build && pnpm run copy",
+    "clean": "rm -rf build .parcel-cache",
+    "copy": "cp -r public/static/ build/static/ && cp public/robots.txt build/"
   },
   "keywords": [],
   "author": "",
@@ -38,7 +39,6 @@
     "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
     "parcel-namer-rewrite": "2.0.0-rc.3",
-    "parcel-reporter-copy-file-v2": "^1.0.1",
     "parcel-transformer-ejs": "^1.0.1",
     "process": "^0.11.10",
     "sharp": "^0.31.3"
@@ -62,9 +62,5 @@
         "hashing": "always"
       }
     }
-  },
-  "copyStaticFiles": [
-    "public/static/*",
-    "public/robots.txt"
-  ]
+  }
 }
