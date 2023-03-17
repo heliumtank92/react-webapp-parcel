@@ -7,8 +7,8 @@
     "theme": "#000000",
     "generateIconOptions": {
       "baseIcon": "./public/favicon.svg",
-      "sizes": [],
-      "shortcutSizes": [],
+      "sizes": [192],
+      "shortcutSizes": [96],
       "genFavicons": false,
       "genSafariPinnedTab": false,
       "purpose": ["any", "maskable"]

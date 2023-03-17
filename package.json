@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "pnpm run clean && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer && pnpm run copy",
-    "start": "pnpm run clean && parcel public/index.ejs --dist-dir build --open && pnpm run copy",
-    "build": "pnpm run clean && parcel build public/index.ejs --dist-dir build && pnpm run copy",
-    "clean": "rm -rf build .parcel-cache",
-    "copy": "cp -r public/static/ build/static/ && cp public/robots.txt build/"
+    "analyze": "pnpm run clean-and-copy && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer",
+    "start": "pnpm run clean-and-copy && parcel public/index.ejs --dist-dir build --open",
+    "build": "pnpm run clean-and-copy && parcel build public/index.ejs --dist-dir build",
+    "clean-and-copy": "rm -rf build .parcel-cache && pnpm run copy",
+    "copy": "mkdir build && cp -r public/static/ build/static/ && cp public/robots.txt build/"
   },
   "keywords": [],
   "author": "",
@@ -53,14 +53,6 @@
       "(.*).jpg$": "assets/images/$1{.hash}.jpg",
       "(.*).jpeg$": "assets/images/$1{.hash}.jpeg",
       "(.*).svg$": "assets/images/$1{.hash}.svg"
-    },
-    "profiles": {
-      "development": {
-        "hashing": "always"
-      },
-      "production": {
-        "hashing": "always"
-      }
     }
   }
 }
