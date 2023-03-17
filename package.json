@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer",
-    "start": "parcel public/index.ejs --open",
-    "build": "parcel build public/index.ejs"
+    "start": "parcel public/index.ejs --dist-dir build --open",
+    "build": "parcel build public/index.ejs --dist-dir build"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +45,7 @@
   "parcel-namer-rewrite": {
     "rules": {
       "(.*).css$": "styles/$1{.hash}.css",
+      "service-worker.js": "service-worker.js",
       "(.*).js$": "scripts/$1{.hash}.js",
       "(.*).png$": "assets/images/$1{.hash}.png",
       "(.*).webp$": "assets/images/$1{.hash}.webp",

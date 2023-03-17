@@ -1,13 +1,12 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { createRoot } from 'react-dom/client'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import AppStore, { PersistedAppStore } from '~/src/Configurations/AppStore'
+import App from './App'
 
-import './service-worker'
-
-const App = lazy(() => import('./App'))
+import '~/public/serviceWorkerRegistration'
 
 const container = document.getElementById('app')
 const root = createRoot(container)

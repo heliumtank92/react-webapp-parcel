@@ -3,14 +3,24 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import APP_ROUTES from '~/src/Constants/APP_ROUTES'
 
-const MainLayout = React.lazy(
+import MainLayout from '~/src/Layouts/Main.Layout'
+// const MainLayout = React.lazy(
+//   () => import(
+//     /* webpackChunkName: "MainLayout" */
+//     /* webpackMode: "lazy" */
+//     /* webpackPreload: true */
+//     '~/src/Layouts/Main.Layout'
+//   )
+// )
+const HomePage = React.lazy(
   () => import(
-    /* webpackChunkName: "MainLayout" */
+    /* webpackChunkName: "HomePage" */
     /* webpackMode: "lazy" */
     /* webpackPreload: true */
-    '~/src/Layouts/Main.Layout'
+    '~/src/Pages/Home/Home.Container'
   )
 )
+// import HomePage from '~/src/Pages/Home/Home.Container'
 
 const Page404Page = React.lazy(
   () => import(
@@ -18,15 +28,6 @@ const Page404Page = React.lazy(
     /* webpackMode: "lazy" */
     /* webpackPreload: true */
     '~/src/Pages/Page404/Page404.Container'
-  )
-)
-
-const HomePage = React.lazy(
-  () => import(
-    /* webpackChunkName: "HomePage" */
-    /* webpackMode: "lazy" */
-    /* webpackPreload: true */
-    '~/src/Pages/Home/Home.Container'
   )
 )
 

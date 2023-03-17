@@ -5,7 +5,7 @@ async function install () {
   await cache.addAll(manifest)
 }
 
-window.addEventListener('install', e => e.waitUntil(install()))
+self.addEventListener('install', e => e.waitUntil(install()))
 
 async function activate () {
   const keys = await caches.keys()
@@ -14,4 +14,6 @@ async function activate () {
   )
 }
 
-window.addEventListener('activate', e => e.waitUntil(activate()))
+self.addEventListener('activate', e => e.waitUntil(activate()))
+
+self.addEventListener('fetch', function (event) {})
