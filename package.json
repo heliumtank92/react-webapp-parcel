@@ -4,10 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer && pnpm run move-assets",
-    "start": "parcel public/index.ejs --open && pnpm run move-assets",
-    "build": "parcel build public/index.ejs && pnpm run move-assets",
-    "move-assets": "cp -r public/assets dist/assets"
+    "analyze": "parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer",
+    "start": "parcel public/index.ejs --open",
+    "build": "parcel build public/index.ejs"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +27,8 @@
     "parcel-namer-rewrite": "2.0.0-rc.3",
     "parcel-reporter-clean-dist": "^1.0.4",
     "parcel-reporter-copy-file-v2": "^1.0.1",
-    "parcel-transformer-ejs": "^1.0.1"
+    "parcel-transformer-ejs": "^1.0.1",
+    "sharp": "^0.31.3"
   },
   "alias": {
     "process": {
@@ -38,11 +38,16 @@
   "parcel-namer-rewrite": {
     "rules": {
       "(.*).css$": "styles/$1{.hash}.css",
-      "(.*).js$": "scripts/$1{.hash}.js"
+      "(.*).js$": "scripts/$1{.hash}.js",
+      "(.*).png$": "assets/images/$1{.hash}.png",
+      "(.*).webp$": "assets/images/$1{.hash}.webp",
+      "(.*).jpg$": "assets/images/$1{.hash}.jpg",
+      "(.*).jpeg$": "assets/images/$1{.hash}.jpeg",
+      "(.*).svg$": "assets/images/$1{.hash}.svg"
     },
     "profiles": {
       "development": {
-        "hashing": "never"
+        "hashing": "always"
       },
       "production": {
         "hashing": "always"

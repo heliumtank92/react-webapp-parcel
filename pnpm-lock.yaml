@@ -15,6 +15,7 @@ specifiers:
   parcel-transformer-ejs: ^1.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  sharp: ^0.31.3
 
 dependencies:
   '@parcel/service-worker': 2.8.3
@@ -33,6 +34,7 @@ devDependencies:
   parcel-reporter-clean-dist: 1.0.4_parcel@2.8.3
   parcel-reporter-copy-file-v2: 1.0.1
   parcel-transformer-ejs: 1.0.1
+  sharp: 0.31.3
 
 packages:
 
@@ -2527,6 +2529,21 @@ packages:
   /sharp/0.30.7:
     resolution: {integrity: sha512-G+MY2YW33jgflKPTXXptVO28HvNOo9G3j0MybYAHeEmby+QuD2U98dT6ueht9cv/XDqZspSpIhoSW+BAKJ7Hig==}
     engines: {node: '>=12.13.0'}
+    requiresBuild: true
+    dependencies:
+      color: 4.2.3
+      detect-libc: 2.0.1
+      node-addon-api: 5.1.0
+      prebuild-install: 7.1.1
+      semver: 7.3.8
+      simple-get: 4.0.1
+      tar-fs: 2.1.1
+      tunnel-agent: 0.6.0
+    dev: true
+
+  /sharp/0.31.3:
+    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
+    engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
