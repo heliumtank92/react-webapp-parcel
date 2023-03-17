@@ -2,13 +2,15 @@ lockfileVersion: 5.4
 
 specifiers:
   '@am92/react-design-system': ^0.0.14
-  '@am92/web-http': ^1.1.0
+  '@am92/web-http': ^1.1.1
   '@parcel/config-default': ^2.8.3
   '@parcel/packager-raw-url': ^2.8.3
   '@parcel/packager-xml': ^2.8.3
   '@parcel/reporter-bundle-analyzer': ^2.8.3
   '@parcel/service-worker': ^2.8.3
+  '@parcel/transformer-raw': ^2.8.3
   '@reduxjs/toolkit': ^1.9.3
+  buffer: ^5.5.0
   custom-env: ^2.0.1
   localforage: ^1.10.0
   parcel: ^2.8.3
@@ -17,6 +19,7 @@ specifiers:
   parcel-reporter-clean-dist: ^1.0.4
   parcel-reporter-copy-file-v2: ^1.0.1
   parcel-transformer-ejs: ^1.0.1
+  process: ^0.11.10
   prop-types: ^15.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -28,9 +31,10 @@ specifiers:
 
 dependencies:
   '@am92/react-design-system': 0.0.14_biqbaboplfbrettd7655fr4n2y
-  '@am92/web-http': 1.1.0
+  '@am92/web-http': 1.1.1
   '@parcel/service-worker': 2.8.3
   '@reduxjs/toolkit': 1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
+  buffer: 5.5.0
   localforage: 1.10.0
   prop-types: 15.8.1
   react: 18.2.0
@@ -45,6 +49,7 @@ devDependencies:
   '@parcel/packager-raw-url': 2.8.3
   '@parcel/packager-xml': 2.8.3
   '@parcel/reporter-bundle-analyzer': 2.8.3
+  '@parcel/transformer-raw': 2.8.3
   custom-env: 2.0.1
   parcel: 2.8.3
   parcel-config-pwa-manifest: 0.1.2_parcel@2.8.3
@@ -52,6 +57,7 @@ devDependencies:
   parcel-reporter-clean-dist: 1.0.4_parcel@2.8.3
   parcel-reporter-copy-file-v2: 1.0.1
   parcel-transformer-ejs: 1.0.1
+  process: 0.11.10
   sharp: 0.31.3
 
 packages:
@@ -87,8 +93,8 @@ packages:
       - moment-jalaali
     dev: false
 
-  /@am92/web-http/1.1.0:
-    resolution: {integrity: sha512-8XgX1q2k+H+ZGhO6HL9ahhwbJr7uUYOGwsctCLDdByxMp2Pd4aZ8CaQ63zlhv4dH6Nj+usjL/kheIH+9UhiQ0g==}
+  /@am92/web-http/1.1.1:
+    resolution: {integrity: sha512-bXZhd9bkNOqSoERDCo1JycR49EgWS/zh9k+NwtqZVAg1KivhMCY60q4R7+FqjvGUo2Qj1bXxKPLoHWnOFxMrQQ==}
     dependencies:
       '@am92/jose-crypto-subtle': 0.0.2
       axios: 1.3.4
@@ -1821,12 +1827,11 @@ packages:
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-    dev: true
 
   /bl/4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
     dependencies:
-      buffer: 5.7.1
+      buffer: 5.5.0
       inherits: 2.0.4
       readable-stream: 3.6.2
     dev: true
@@ -1860,7 +1865,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001466
+      caniuse-lite: 1.0.30001467
       electron-to-chromium: 1.4.332
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
@@ -1870,12 +1875,11 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
-  /buffer/5.7.1:
-    resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
+  /buffer/5.5.0:
+    resolution: {integrity: sha512-9FTEDjLjwoAkEwyMGDjYJQN2gfRgOKBKRfiglhvibGbpeeU/pQn1bJxQqm32OD/AIeEuHxU9roxXxg34Byp/Ww==}
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
-    dev: true
 
   /call-bind/1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
@@ -1888,8 +1892,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  /caniuse-lite/1.0.30001466:
-    resolution: {integrity: sha512-ewtFBSfWjEmxUgNBSZItFSmVtvk9zkwkl1OfRZlKA8slltRN+/C/tuGVrF9styXkN36Yu3+SeJ1qkXxDEyNZ5w==}
+  /caniuse-lite/1.0.30001467:
+    resolution: {integrity: sha512-cEdN/5e+RPikvl9AHm4uuLXxeCNq8rFsQ+lPHTfe/OtypP3WwnVVbjn+6uBV7PaFL6xUFzTh+sSCOz1rKhcO+Q==}
     dev: true
 
   /chalk/2.4.2:
@@ -2438,7 +2442,6 @@ packages:
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
-    dev: true
 
   /immediate/3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
@@ -3135,6 +3138,11 @@ packages:
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
+    dev: true
+
+  /process/0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
     dev: true
 
   /prop-types/15.8.1:

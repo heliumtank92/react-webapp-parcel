@@ -12,10 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@parcel/service-worker": "^2.8.3",
     "@am92/react-design-system": "^0.0.14",
-    "@am92/web-http": "^1.1.0",
+    "@am92/web-http": "^1.1.1",
+    "@parcel/service-worker": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.3",
+    "buffer": "^5.5.0",
     "localforage": "^1.10.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -30,6 +31,7 @@
     "@parcel/packager-raw-url": "^2.8.3",
     "@parcel/packager-xml": "^2.8.3",
     "@parcel/reporter-bundle-analyzer": "^2.8.3",
+    "@parcel/transformer-raw": "^2.8.3",
     "custom-env": "^2.0.1",
     "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
@@ -37,12 +39,8 @@
     "parcel-reporter-clean-dist": "^1.0.4",
     "parcel-reporter-copy-file-v2": "^1.0.1",
     "parcel-transformer-ejs": "^1.0.1",
+    "process": "^0.11.10",
     "sharp": "^0.31.3"
-  },
-  "alias": {
-    "process": {
-      "global": "{}"
-    }
   },
   "parcel-namer-rewrite": {
     "rules": {
@@ -62,5 +60,9 @@
         "hashing": "always"
       }
     }
-  }
+  },
+  "copyStaticFiles": [
+    "public/static/*",
+    "public/robots.txt"
+  ]
 }
