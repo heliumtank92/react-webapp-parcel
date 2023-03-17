@@ -4,9 +4,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer",
-    "start": "parcel public/index.ejs --dist-dir build --open",
-    "build": "parcel build public/index.ejs --dist-dir build"
+    "analyze": "pnpm run clean && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer",
+    "start": "pnpm run clean && parcel public/index.ejs --dist-dir build --open",
+    "build": "pnpm run clean && parcel build public/index.ejs --dist-dir build",
+    "clean": "rm -rf build .parcel-cache"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",
+    "@parcel/core": "^2.8.3",
     "@parcel/packager-raw-url": "^2.8.3",
     "@parcel/packager-xml": "^2.8.3",
     "@parcel/reporter-bundle-analyzer": "^2.8.3",
@@ -36,7 +38,6 @@
     "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
     "parcel-namer-rewrite": "2.0.0-rc.3",
-    "parcel-reporter-clean-dist": "^1.0.4",
     "parcel-reporter-copy-file-v2": "^1.0.1",
     "parcel-transformer-ejs": "^1.0.1",
     "process": "^0.11.10",
