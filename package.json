@@ -4,16 +4,16 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze": "pnpm run clean-build && parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer && pnpm run move-assets",
-    "start": "pnpm run clean-build && parcel public/index.ejs --open && pnpm run move-assets",
-    "build": "pnpm run clean-build && parcel build public/index.ejs && pnpm run move-assets",
-    "move-assets": "cp -r public/assets dist/assets",
-    "clean-build": "rm -rf dist"
+    "analyze": "parcel build public/index.ejs --reporter @parcel/reporter-bundle-analyzer && pnpm run move-assets",
+    "start": "parcel public/index.ejs --open && pnpm run move-assets",
+    "build": "parcel build public/index.ejs && pnpm run move-assets",
+    "move-assets": "cp -r public/assets dist/assets"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@parcel/service-worker": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -25,11 +25,28 @@
     "custom-env": "^2.0.1",
     "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
+    "parcel-namer-rewrite": "2.0.0-rc.3",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-reporter-copy-file-v2": "^1.0.1",
     "parcel-transformer-ejs": "^1.0.1"
   },
   "alias": {
     "process": {
       "global": "{}"
+    }
+  },
+  "parcel-namer-rewrite": {
+    "rules": {
+      "(.*).css$": "styles/$1{.hash}.css",
+      "(.*).js$": "scripts/$1{.hash}.js"
+    },
+    "profiles": {
+      "development": {
+        "hashing": "never"
+      },
+      "production": {
+        "hashing": "always"
+      }
     }
   }
 }
