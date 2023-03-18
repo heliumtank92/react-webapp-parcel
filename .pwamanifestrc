@@ -1,19 +1,4 @@
 {
-  "development": {
-    "name": "Parcel React App",
-    "shortName": "Parcel React App",
-    "startURL": "/",
-    "scope": "/",
-    "theme": "#000000",
-    "generateIconOptions": {
-      "baseIcon": "./public/favicon.svg",
-      "sizes": [192],
-      "shortcutSizes": [96],
-      "genFavicons": false,
-      "genSafariPinnedTab": false,
-      "purpose": ["any", "maskable"]
-    }
-  },
   "production": {
     "name": "Parcel React App",
     "shortName": "Parcel React App",
@@ -22,12 +7,21 @@
     "theme": "#000000",
     "generateIconOptions": {
       "baseIcon": "./public/favicon.svg",
-      "sizes": [192, 384, 512],
-      "shortcutSizes": [96, 192],
       "genFavicons": true,
       "genSafariPinnedTab": true,
       "purpose": ["any", "maskable"]
     }
+  },
+  "development": {
+    "name": "Parcel React App",
+    "shortName": "Parcel React App",
+    "startURL": "/",
+    "scope": "/",
+    "theme": "#000000",
+    "generateIconOptions": {
+      "baseIcon": "./public/favicon.svg"
+    },
+    "disabled": true
   }
 }
 

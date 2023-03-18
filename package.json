@@ -47,6 +47,10 @@
     "rules": {
       "(.*).css$": "styles/$1{.hash}.css",
       "service-worker.js": "service-worker.js",
+      "public(.*).webmanifest": "manifest{.hash}.webmanifest",
+      "public(.*).xml": "browserconfig{.hash}.xml",
+      "public(.*).webp": "assets/favicons/favicon{.hash}.webp",
+      "public(.*).png": "assets/favicons/favicon{.hash}.png",
       "(.*).js$": "scripts/$1{.hash}.js",
       "(.*).png$": "assets/images/$1{.hash}.png",
       "(.*).webp$": "assets/images/$1{.hash}.webp",
