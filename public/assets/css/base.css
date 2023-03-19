@@ -1,4 +1,4 @@
 html, 
-body {
+#app {
   background: var(--ds-color-surfaceBackground);
 }
