@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "pnpm run clean-and-copy && parcel build public/index.ejs --dist-dir build --reporter @parcel/reporter-bundle-analyzer",
-    "start": "pnpm run clean-and-copy && parcel public/index.ejs --dist-dir build --open",
+    "start": "pnpm run clean-and-copy && parcel public/index.ejs --dist-dir build --open chrome",
     "build": "pnpm run clean-and-copy && parcel build public/index.ejs --dist-dir build",
     "clean-and-copy": "rm -rf build .parcel-cache && pnpm run copy",
     "copy": "mkdir build && cp -r public/static/ build/static/ && cp public/robots.txt build/"
@@ -14,13 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@am92/react-design-system": "^0.0.14",
+    "@am92/react-design-system": "^0.0.16",
     "@am92/web-http": "^1.1.1",
     "@parcel/service-worker": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.3",
-    "buffer": "^5.5.0",
+    "buffer": "^6.0.3",
     "localforage": "^1.10.0",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -41,6 +40,7 @@
     "parcel-namer-rewrite": "2.0.0-rc.3",
     "parcel-transformer-ejs": "^1.0.1",
     "process": "^0.11.10",
+    "prop-types": "^15.8.1",
     "sharp": "^0.31.3"
   },
   "parcel-namer-rewrite": {

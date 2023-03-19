@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@am92/react-design-system': ^0.0.14
+  '@am92/react-design-system': ^0.0.16
   '@am92/web-http': ^1.1.1
   '@parcel/config-default': ^2.8.3
   '@parcel/core': ^2.8.3
@@ -11,7 +11,7 @@ specifiers:
   '@parcel/service-worker': ^2.8.3
   '@parcel/transformer-raw': ^2.8.3
   '@reduxjs/toolkit': ^1.9.3
-  buffer: ^5.5.0
+  buffer: ^6.0.3
   custom-env: ^2.0.1
   localforage: ^1.10.0
   parcel: ^2.8.3
@@ -29,13 +29,12 @@ specifiers:
   sharp: ^0.31.3
 
 dependencies:
-  '@am92/react-design-system': 0.0.14_biqbaboplfbrettd7655fr4n2y
+  '@am92/react-design-system': 0.0.16_biqbaboplfbrettd7655fr4n2y
   '@am92/web-http': 1.1.1
   '@parcel/service-worker': 2.8.3
   '@reduxjs/toolkit': 1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
-  buffer: 5.5.0
+  buffer: 6.0.3
   localforage: 1.10.0
-  prop-types: 15.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.5_egguyi6kvemdtrnkbl3bdoeaey
@@ -56,6 +55,7 @@ devDependencies:
   parcel-namer-rewrite: 2.0.0-rc.3_@parcel+core@2.8.3
   parcel-transformer-ejs: 1.0.1_@parcel+core@2.8.3
   process: 0.11.10
+  prop-types: 15.8.1
   sharp: 0.31.3
 
 packages:
@@ -64,8 +64,8 @@ packages:
     resolution: {integrity: sha512-9e509R2KgTWOKi9+SWzeMbYSqA2QYk1AKeKX95jodrNPT2SRNG7rZ4qsyyAHtJJOe3zaKhRUg0mPN9l2fX77VQ==}
     dev: false
 
-  /@am92/react-design-system/0.0.14_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-QCySeBD+gYgNe/14/FmGN/SPFMCpLKU2XYz7HO/L8LaRsoKjLaGwlfpas3sciS0Mo/7c2TIBf2z7RN3WMlrxWA==}
+  /@am92/react-design-system/0.0.16_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-NvOGnFXy0bXutQGKrNe3UHi5Z5/j4F8wJqnZWAA6YBrcaaDZc9jUnwD+2isG6CgUp26l+o1qgw7g6jfeB902pw==}
     peerDependencies:
       react: ^18.x.x
       react-dom: ^18.x.x
@@ -1679,7 +1679,7 @@ packages:
   /bl/4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
     dependencies:
-      buffer: 5.5.0
+      buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
     dev: true
@@ -1713,8 +1713,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001467
-      electron-to-chromium: 1.4.332
+      caniuse-lite: 1.0.30001468
+      electron-to-chromium: 1.4.333
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
@@ -1723,11 +1723,19 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
-  /buffer/5.5.0:
-    resolution: {integrity: sha512-9FTEDjLjwoAkEwyMGDjYJQN2gfRgOKBKRfiglhvibGbpeeU/pQn1bJxQqm32OD/AIeEuHxU9roxXxg34Byp/Ww==}
+  /buffer/5.7.1:
+    resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+    dev: true
+
+  /buffer/6.0.3:
+    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
+    dev: false
 
   /call-bind/1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
@@ -1740,8 +1748,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  /caniuse-lite/1.0.30001467:
-    resolution: {integrity: sha512-cEdN/5e+RPikvl9AHm4uuLXxeCNq8rFsQ+lPHTfe/OtypP3WwnVVbjn+6uBV7PaFL6xUFzTh+sSCOz1rKhcO+Q==}
+  /caniuse-lite/1.0.30001468:
+    resolution: {integrity: sha512-zgAo8D5kbOyUcRAgSmgyuvBkjrGk5CGYG5TYgFdpQv+ywcyEpo1LOWoG8YmoflGnh+V+UsNuKYedsoYs0hzV5A==}
     dev: true
 
   /chalk/2.4.2:
@@ -2016,8 +2024,8 @@ packages:
       jake: 10.8.5
     dev: true
 
-  /electron-to-chromium/1.4.332:
-    resolution: {integrity: sha512-c1Vbv5tuUlBFp0mb3mCIjw+REEsgthRgNE8BlbEDKmvzb8rxjcVki6OkQP83vLN34s0XCxpSkq7AZNep1a6xhw==}
+  /electron-to-chromium/1.4.333:
+    resolution: {integrity: sha512-YyE8+GKyGtPEP1/kpvqsdhD6rA/TP1DUFDN4uiU/YI52NzDxmwHkEb3qjId8hLBa5siJvG0sfC3O66501jMruQ==}
     dev: true
 
   /end-of-stream/1.4.4:
@@ -2513,7 +2521,6 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
-    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -2926,7 +2933,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: false
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
@@ -2965,7 +2971,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: false
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
