@@ -7,15 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-    <% if (locals.APP_ENV_PRECONNECT_DOMAINS && locals.APP_ENV_PRECONNECT_DOMAINS.length) { %>
-      <% PRECONNECT_DOMAINS = locals.APP_ENV_PRECONNECT_DOMAINS.split(',') %>
+    <% if (locals.APP_PRECONNECT_DOMAINS && locals.APP_PRECONNECT_DOMAINS.length) { %>
+      <% PRECONNECT_DOMAINS = locals.APP_PRECONNECT_DOMAINS.split(',') %>
       <% PRECONNECT_DOMAINS.forEach(function(PRECONNECT_DOMAIN){ %>
         <link rel="preconnect" href="<%= PRECONNECT_DOMAIN %>" />
       <% }); %>
     <% } %>
 
-    <title><%= locals.APP_ENV_TITLE %></title>
-    <meta name="description" content="<%= locals.APP_ENV_DESCRIPTION %>">
+    <title><%= locals.APP_TITLE %></title>
+    <meta name="description" content="<%= locals.APP_DESCRIPTION %>">
     
     <link rel="preload" href="./assets/css/base.css" as="style">
     <link rel="stylesheet" href="./assets/css/base.css" media="print" onload="this.media='all'">
