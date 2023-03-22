@@ -17,8 +17,8 @@ const handshake = async (webHttp) => {
 
     const response = await webHttp.request(options)
     const { data: body } = response
-    const { data } = body
-    const { publicKey } = data
+    const { data = {} } = body
+    const { publicKey = '' } = data
     webHttp.context.set('PUBLIC_KEY', publicKey)
   } catch (err) { console.log(err); throw err }
 }
