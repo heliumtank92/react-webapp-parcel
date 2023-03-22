@@ -1,0 +1,3 @@
+export const APP_ENV_TITLE = process.env.APP_ENV_TITLE
+export const APP_ENV_DESCRIPTION = process.env.APP_ENV_DESCRIPTION
+export const APP_ENV_PRECONNECT_DOMAINS = process.env.APP_ENV_PRECONNECT_DOMAINS
