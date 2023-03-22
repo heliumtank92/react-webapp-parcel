@@ -11,7 +11,7 @@ specifiers:
   '@parcel/service-worker': ^2.8.3
   '@parcel/transformer-raw': ^2.8.3
   '@reduxjs/toolkit': ^1.9.3
-  buffer: ^6.0.3
+  buffer: ^5.5.0
   custom-env: ^2.0.1
   localforage: ^1.10.0
   parcel: ^2.8.3
@@ -48,7 +48,7 @@ devDependencies:
   '@parcel/packager-xml': 2.8.3_@parcel+core@2.8.3
   '@parcel/reporter-bundle-analyzer': 2.8.3_@parcel+core@2.8.3
   '@parcel/transformer-raw': 2.8.3_@parcel+core@2.8.3
-  buffer: 6.0.3
+  buffer: 5.7.1
   custom-env: 2.0.1
   parcel: 2.8.3
   parcel-config-pwa-manifest: 0.1.2_parcel@2.8.3
@@ -1726,13 +1726,6 @@ packages:
 
   /buffer/5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.2.1
-    dev: true
-
-  /buffer/6.0.3:
-    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
