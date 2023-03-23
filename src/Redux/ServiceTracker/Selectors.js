@@ -12,3 +12,11 @@ export const getServiceSelector = (state, serviceKey) => {
     (serviceKeyValue) => serviceKeyValue
   )(state)
 }
+
+export const isServiceLoading = (state, serviceKeys) => {
+  const loading = serviceKeys.reduce((boolean, serviceKey) => {
+    return boolean && getServiceSelector(state, serviceKey)
+  }, true)
+
+  return loading
+}
