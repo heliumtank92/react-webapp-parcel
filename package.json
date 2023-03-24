@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@am92/react-design-system": "^0.0.16",
+    "@am92/react-design-system": "^0.0.19",
     "@am92/web-http": "^1.1.1",
     "@parcel/service-worker": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.3",
@@ -33,7 +33,7 @@
     "@parcel/packager-xml": "^2.8.3",
     "@parcel/reporter-bundle-analyzer": "^2.8.3",
     "@parcel/transformer-raw": "^2.8.3",
-    "buffer": "^5.5.0",
+    "buffer": "^5.7.1",
     "custom-env": "^2.0.1",
     "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
