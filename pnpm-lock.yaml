@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@am92/react-design-system': ^0.0.19
+  '@am92/react-design-system': ^0.0.20
   '@am92/web-http': ^1.1.1
   '@parcel/config-default': ^2.8.3
   '@parcel/core': ^2.8.3
@@ -29,7 +29,7 @@ specifiers:
   sharp: ^0.31.3
 
 dependencies:
-  '@am92/react-design-system': 0.0.19_biqbaboplfbrettd7655fr4n2y
+  '@am92/react-design-system': 0.0.20_biqbaboplfbrettd7655fr4n2y
   '@am92/web-http': 1.1.1
   '@parcel/service-worker': 2.8.3
   '@reduxjs/toolkit': 1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
@@ -64,8 +64,8 @@ packages:
     resolution: {integrity: sha512-9e509R2KgTWOKi9+SWzeMbYSqA2QYk1AKeKX95jodrNPT2SRNG7rZ4qsyyAHtJJOe3zaKhRUg0mPN9l2fX77VQ==}
     dev: false
 
-  /@am92/react-design-system/0.0.19_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-bV1XxdKXJXO4cjIIxaKTPwId+CZTDG+w/yot59crGYC3GYnG23D3mB4LbwcoDoHECVpv7AJDhhHX9eT9K8BuTw==}
+  /@am92/react-design-system/0.0.20_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-2E9US7I811pAEhyg2SyMDgemykzutLzl95F9GxJ0rBElM5QPbTQcmItuThHDfXhBrW3FQJpyg9H5zeuqNM7nNA==}
     peerDependencies:
       react: ^18.x.x
       react-dom: ^18.x.x
