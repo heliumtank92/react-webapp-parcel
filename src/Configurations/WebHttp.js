@@ -7,7 +7,7 @@
 // asHttp.context.set(CONTEXT.API_KEY, AS_API_KEY)
 
 // const AXIOS_HTTP_CONFIG = { timeout: 30000, retries: 0 }
-// const WEB_HTTP_CONFIG = { disableCrypto: true }
+// const WEB_HTTP_CONFIG = { disableCrypto: true, disableHeaderInjection: true }
 // export const webHttp = new WebHttp(AXIOS_HTTP_CONFIG, WEB_HTTP_CONFIG)
 
 export const HANDSHAKE_ENABLED_HTTP = []
