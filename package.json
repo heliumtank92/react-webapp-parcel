@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@am92/react-design-system": "^0.0.22",
+    "@am92/react-design-system": "^0.0.23",
     "@am92/web-http": "^1.1.3",
     "@parcel/service-worker": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.3",
