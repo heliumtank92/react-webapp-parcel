@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@am92/react-design-system':
-    specifier: ^0.0.27
-    version: 0.0.27(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.0.35
+    version: 0.0.35(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
   '@am92/web-http':
     specifier: ^1.1.4
     version: 1.1.4
@@ -85,8 +85,8 @@ packages:
     resolution: {integrity: sha512-9e509R2KgTWOKi9+SWzeMbYSqA2QYk1AKeKX95jodrNPT2SRNG7rZ4qsyyAHtJJOe3zaKhRUg0mPN9l2fX77VQ==}
     dev: false
 
-  /@am92/react-design-system@0.0.27(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-8jd0p/dlYeCuJFDB9nf9E+oCa5rMI0BFhEp66lPk6+82gv3WUpQSCoF/KHoktY8vOCntIT350OAqPn/xseOt7g==}
+  /@am92/react-design-system@0.0.35(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FgSh10O8DTzaiFt/wGhwNviQa9QXjzNUUhtPg4rFsCCpqQWP+M3ekBcgg8r+uQRthkqeMAtQq2sYQnw0Bi3mbQ==}
     peerDependencies:
       react: ^18.x.x
       react-dom: ^18.x.x
@@ -97,7 +97,8 @@ packages:
       '@mui/lab': 5.0.0-alpha.120(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(@mui/material@5.13.0)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.13.0(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(react-dom@18.2.0)(react@18.2.0)
       '@mui/system': 5.12.3(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(react@18.2.0)
-      '@mui/x-date-pickers': 6.3.1(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.118)(@mui/material@5.13.0)(@mui/system@5.12.3)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/x-date-pickers': 6.3.1(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.118)(@mui/material@5.13.0)(@mui/system@5.12.3)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0)
+      date-fns: 2.30.0
       notistack: 3.0.1(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
       prop-types: 15.8.1
       react: 18.2.0
@@ -105,7 +106,6 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
       - csstype
-      - date-fns
       - date-fns-jalali
       - dayjs
       - luxon
@@ -649,7 +649,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.3.1(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.118)(@mui/material@5.13.0)(@mui/system@5.12.3)(react-dom@18.2.0)(react@18.2.0):
+  /@mui/x-date-pickers@6.3.1(@emotion/react@11.11.0)(@emotion/styled@11.11.0)(@mui/base@5.0.0-alpha.118)(@mui/material@5.13.0)(@mui/system@5.12.3)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-YPQrsi10rpeEUJkp77NkHqkcZbzAAWITl3MZJ8Mv8ZiS9MEFKmr2kU+SPWUomDByor2UlaS9EmvtslQW74hiWg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -696,6 +696,7 @@ packages:
       '@mui/utils': 5.12.3(react@18.2.0)
       '@types/react-transition-group': 4.4.6
       clsx: 1.2.1
+      date-fns: 2.30.0
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1813,6 +1814,13 @@ packages:
       dotenv: 16.0.3
       dotenv-expand: 5.1.0
     dev: true
+
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.21.5
+    dev: false
 
   /decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
