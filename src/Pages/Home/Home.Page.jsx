@@ -1,10 +1,45 @@
 import React, { PureComponent } from 'react'
-import { DsTypography } from '@am92/react-design-system/Components'
+import {
+  DsBox,
+  DsImage,
+  DsTypography
+} from '@am92/react-design-system/Components'
 
+const homeImage = [
+  {
+    src: new URL(
+      '~/public/assets/images/home.png?as=webp',
+      import.meta.url
+    ).href,
+    alt: 'Home Image',
+    as: 'image/webp'
+  },
+  {
+    src: new URL('~/public/assets/images/home.png', import.meta.url)
+      .href,
+    alt: 'Home Image',
+    as: 'image/png'
+  }
+]
 export default class HomePage extends PureComponent {
-  render () {
+  render() {
     return (
-      <DsTypography variant='headingBoldExtraLarge'>Home Page</DsTypography>
+      <DsBox
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          px: 'var(--ds-spacing-warm)'
+        }}
+      >
+        <DsImage
+          srcSet={homeImage}
+          style={{ width: '100%' }}
+          width="100%"
+          height="100%"
+        />
+      </DsBox>
     )
   }
 }

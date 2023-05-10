@@ -7,8 +7,13 @@ import { Experimental_CssVarsProvider as CssVarsProvider } from '@am92/react-des
 import { DsCssBaseline } from '@am92/react-design-system/Components'
 // import { CONTEXT } from '@am92/web-http'
 
-import { getThemeModeSelector } from './Redux/Theme/Selectors'
-import { getAccessTokenSelector, getRefreshTokenSelector } from './Redux/Auth/Selectors'
+import Loader from '~/src/Components/Loader'
+
+import { getThemeModeSelector } from '~/src/Redux/Theme/Selectors'
+import {
+  getAccessTokenSelector,
+  getRefreshTokenSelector
+} from './Redux/Auth/Selectors'
 
 import getAppRouter from '~/src/Configurations/getAppRouter'
 // import { asHttp } from '~/src/Configurations/WebHttp'
@@ -26,7 +31,7 @@ class App extends Component {
     hasError: false
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.initialize()
   }
 
@@ -38,15 +43,15 @@ class App extends Component {
     }
   }
 
-  render () {
-    const { 
-      persisted, 
-      themeMode,
-      // accessToken, 
+  render() {
+    const {
+      persisted,
+      themeMode
+      // accessToken,
       // refreshToken
     } = this.props
 
-    let children = <>Loading...</>
+    let children = <Loader />
     const AppTheme = getTheme(PALETTE, FONT_FAMILY)
 
     if (persisted) {
@@ -62,19 +67,17 @@ class App extends Component {
       <CssVarsProvider
         theme={AppTheme}
         defaultMode={themeMode}
-        modeStorageKey='mui-mode'
+        modeStorageKey="mui-mode"
       >
         <DsCssBaseline enableColorScheme>
-          <Suspense loading={<Loader />}>
-            {children}
-          </Suspense>
+          <Suspense loading={<Loader />}>{children}</Suspense>
         </DsCssBaseline>
       </CssVarsProvider>
     )
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const themeMode = getThemeModeSelector(state)
   const accessToken = getAccessTokenSelector(state)
   const refreshToken = getRefreshTokenSelector(state)
@@ -86,7 +89,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   actions: {}
 })
 

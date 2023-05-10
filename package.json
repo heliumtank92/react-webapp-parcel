@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@am92/react-design-system": "^0.0.25",
+    "@am92/react-design-system": "^0.0.27",
     "@am92/web-http": "^1.1.4",
     "@parcel/service-worker": "^2.8.3",
     "@reduxjs/toolkit": "^1.9.5",
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.11.0",
+    "react-router-dom": "^6.11.1",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0"
   },
@@ -36,12 +36,11 @@
     "buffer": "^6.0.3",
     "custom-env": "^2.0.2",
     "parcel": "^2.8.3",
-    "parcel-config-pwa-manifest": "^0.1.2",
     "parcel-namer-rewrite": "2.0.0-rc.3",
     "parcel-transformer-ejs": "^1.0.1",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
-    "sharp": "^0.32.1"
+    "sharp": "^0.31.1"
   },
   "parcel-namer-rewrite": {
     "profiles": {
