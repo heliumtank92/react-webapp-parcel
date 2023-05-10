@@ -6,7 +6,7 @@
 // export const asHttp = new WebHttp(AS_AXIOS_HTTP_CONFIG, AS_WEB_HTTP_CONFIG)
 // asHttp.context.set(CONTEXT.API_KEY, AS_API_KEY)
 
-// const AXIOS_HTTP_CONFIG = { timeout: 30000, retries: 0 }
+// const AXIOS_HTTP_CONFIG = { timeout: 30000 }
 // const WEB_HTTP_CONFIG = { disableCrypto: true, disableHeaderInjection: true }
 // export const webHttp = new WebHttp(AXIOS_HTTP_CONFIG, WEB_HTTP_CONFIG)
 

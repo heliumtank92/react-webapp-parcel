@@ -13,7 +13,7 @@ import {
 import localforage from 'localforage'
 
 const persistConfig = {
-  key: process.env.APP_TITLE,
+  key: process.env.APP_TITLE || 'APP_TITLE',
   version: 1,
   storage: localforage,
   whitelist: persistedReducers

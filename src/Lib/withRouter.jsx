@@ -6,6 +6,7 @@ export default function withRouter (Child) {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
     const params = useParams()
+    const navigateTo = (route, options = {}) => navigate(route, options)
 
     return (
       <Child
@@ -15,6 +16,7 @@ export default function withRouter (Child) {
         navigate={navigate}
         location={location}
         params={params}
+        navigateTo={navigateTo}
       />
     )
   }

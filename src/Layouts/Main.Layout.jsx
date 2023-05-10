@@ -1,15 +1,10 @@
 import React, { PureComponent } from 'react'
-import { Outlet, UNSAFE_DataRouterContext } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
-class MainLayout extends PureComponent {
-  static contextType = UNSAFE_DataRouterContext
+export default class MainLayout extends PureComponent {
   render () {
     return (
-      <>
-        <Outlet />
-      </>
+      <Outlet />
     )
   }
 }
-
-export default MainLayout

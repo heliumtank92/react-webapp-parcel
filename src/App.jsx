@@ -2,17 +2,20 @@ import PropTypes from 'prop-types'
 import React, { Component, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
-
 import getTheme from '@am92/react-design-system/Theme'
 import { Experimental_CssVarsProvider as CssVarsProvider } from '@am92/react-design-system/styles'
 import { DsCssBaseline } from '@am92/react-design-system/Components'
+// import { CONTEXT } from '@am92/web-http'
+
+import { getThemeModeSelector } from './Redux/Theme/Selectors'
+import { getAccessTokenSelector, getRefreshTokenSelector } from './Redux/Auth/Selectors'
 
 import getAppRouter from '~/src/Configurations/getAppRouter'
-import Loader from '~/src/Components/Loader'
-
-import { getThemeReducer } from '~/src/Redux/Theme/Selectors'
+// import { asHttp } from '~/src/Configurations/WebHttp'
 
 import performHandshake from '~/src/Services/performHandshake'
+
+import { PALETTE, FONT_FAMILY } from '~/src/Constants/THEME'
 
 class App extends Component {
   static propTypes = {
@@ -36,22 +39,29 @@ class App extends Component {
   }
 
   render () {
-    const { persisted, theme } = this.props
+    const { 
+      persisted, 
+      themeMode,
+      // accessToken, 
+      // refreshToken
+    } = this.props
 
-    let children = <Loader />
-    const AppTheme = getTheme()
+    let children = <>Loading...</>
+    const AppTheme = getTheme(PALETTE, FONT_FAMILY)
 
     if (persisted) {
       const router = getAppRouter()
       children = <RouterProvider router={router} />
-    }
+      window.localStorage.setItem('mui-mode', themeMode)
 
-    window.localStorage.setItem('mui-mode', theme.mode)
+      // asHttp.context.set(CONTEXT.ACCESS_TOKEN, accessToken)
+      // asHttp.context.set(CONTEXT.REFRESH_TOKEN, refreshToken)
+    }
 
     return (
       <CssVarsProvider
         theme={AppTheme}
-        defaultMode={theme.mode}
+        defaultMode={themeMode}
         modeStorageKey='mui-mode'
       >
         <DsCssBaseline enableColorScheme>
@@ -65,9 +75,14 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const theme = getThemeReducer(state)
+  const themeMode = getThemeModeSelector(state)
+  const accessToken = getAccessTokenSelector(state)
+  const refreshToken = getRefreshTokenSelector(state)
+
   return {
-    theme
+    themeMode,
+    accessToken,
+    refreshToken
   }
 }
 

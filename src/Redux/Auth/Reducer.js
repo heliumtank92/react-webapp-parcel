@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { SLICE_NAME } from './Selectors'
 
-const INITIAL_STATE = { isLoggedIn: false }
+const INITIAL_STATE = { 
+  isLoggedIn: false,
+  accessToken: '', 
+  refreshToken: ''
+}
 
 const slice = createSlice({
   name: SLICE_NAME,
