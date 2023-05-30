@@ -3,7 +3,9 @@ import { Provider } from 'react-redux'
 import { createRoot } from 'react-dom/client'
 import { PersistGate } from 'redux-persist/integration/react'
 
-import AppStore, { PersistedAppStore } from '~/src/Configurations/AppStore'
+import AppStore, {
+  PersistedAppStore
+} from '~/src/Configurations/AppStore'
 import App from './App'
 
 import '~/public/serviceWorkerRegistration'
@@ -18,7 +20,7 @@ root.render(
         persistor={PersistedAppStore}
         onBeforeLift={() => ({})}
       >
-        {(persisted) => <App persisted={persisted} />}
+        {persisted => <App persisted={persisted} />}
       </PersistGate>
     </Provider>
   </React.StrictMode>

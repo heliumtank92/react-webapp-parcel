@@ -7,7 +7,6 @@ const isLoggedInSelect = state => state[SLICE_NAME].isLoggedIn
 const accessTokenSelect = state => state[SLICE_NAME].accessToken
 const refreshTokenSelect = state => state[SLICE_NAME].refreshToken
 
-
 export const getIsLoggedInSelector = createSelector(
   isLoggedInSelect,
   isLoggedIn => isLoggedIn

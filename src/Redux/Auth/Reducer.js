@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { SLICE_NAME } from './Selectors'
 
-const INITIAL_STATE = { 
+const INITIAL_STATE = {
   isLoggedIn: false,
-  accessToken: '', 
+  accessToken: '',
   refreshToken: ''
 }
 

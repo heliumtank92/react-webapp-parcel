@@ -29,10 +29,14 @@ export default class HomePage extends PureComponent {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          flexDirection: 'column',
           height: '100vh',
           px: 'var(--ds-spacing-warm)'
         }}
       >
+        <DsTypography variant="displayBoldItalicLarge">
+          Home Page
+        </DsTypography>
         <DsImage
           srcSet={homeImage}
           style={{ width: '100%', height: 'auto' }}

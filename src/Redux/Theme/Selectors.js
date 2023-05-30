@@ -9,4 +9,3 @@ export const getThemeModeSelector = createSelector(
   modeSelect,
   mode => mode
 )
-
