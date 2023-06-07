@@ -2,9 +2,11 @@ import PropTypes from 'prop-types'
 import React, { Component, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
-import getTheme from '@am92/react-design-system/Theme'
-import { Experimental_CssVarsProvider as CssVarsProvider } from '@am92/react-design-system/styles'
-import { DsCssBaseline } from '@am92/react-design-system/Components'
+import {
+  getTheme,
+  DsCssBaseline,
+  Experimental_CssVarsProvider as CssVarsProvider
+} from '@am92/react-design-system'
 // import { CONTEXT } from '@am92/web-http'
 
 import Loader from '~/src/Components/Loader'

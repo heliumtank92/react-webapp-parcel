@@ -1,26 +1,31 @@
 import React, { PureComponent } from 'react'
 import {
+  DsAppBar,
+  DsAvatar,
   DsBox,
+  DsIconButton,
   DsImage,
-  DsTypography
-} from '@am92/react-design-system/Components'
+  DsRemixIcon,
+  DsTypography,
+  DsButton,
+  DsBottomStagger,
+  DsAccordion
+} from '@am92/react-design-system'
 
 const homeImage = [
   {
-    src: new URL(
-      '~/public/assets/images/home.png?as=webp',
-      import.meta.url
-    ).href,
+    src: new URL('~/public/assets/images/home.png?as=webp', import.meta.url)
+      .href,
     alt: 'Home Image',
     as: 'image/webp'
   },
   {
-    src: new URL('~/public/assets/images/home.png', import.meta.url)
-      .href,
+    src: new URL('~/public/assets/images/home.png', import.meta.url).href,
     alt: 'Home Image',
     as: 'image/png'
   }
 ]
+
 export default class HomePage extends PureComponent {
   render() {
     return (
@@ -31,12 +36,11 @@ export default class HomePage extends PureComponent {
           alignItems: 'center',
           flexDirection: 'column',
           height: '100vh',
-          px: 'var(--ds-spacing-warm)'
+          px: 'var(--ds-spacing-warm)',
+          bgcolor: 'common.black'
         }}
       >
-        <DsTypography variant="displayBoldItalicLarge">
-          Home Page
-        </DsTypography>
+        <DsTypography variant="bodyBoldLarge">Home Page</DsTypography>
         <DsImage
           srcSet={homeImage}
           style={{ width: '100%', height: 'auto' }}
