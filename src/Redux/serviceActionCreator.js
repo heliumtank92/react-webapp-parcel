@@ -7,10 +7,7 @@ export default function serviceActionCreator(actions, service) {
 
       try {
         const response = await service(data)
-        if (
-          actions.success &&
-          typeof actions.success === 'function'
-        ) {
+        if (actions.success && typeof actions.success === 'function') {
           dispatch(actions.success(response))
         }
         return response
