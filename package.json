@@ -14,14 +14,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@am92/react-design-system": "^2.0.5",
-    "@am92/web-http": "^2.0.5",
+    "@am92/react-design-system": "^2.0.7",
+    "@am92/web-http": "^2.0.10",
     "@parcel/service-worker": "^2.9.2",
     "@reduxjs/toolkit": "^1.9.5",
     "localforage": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.7",
+    "react-redux": "^8.1.0",
     "react-router-dom": "^6.12.1",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0"

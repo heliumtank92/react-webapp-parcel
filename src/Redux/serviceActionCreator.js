@@ -1,22 +1,23 @@
-export default function serviceActionCreator(actions, service) {
+import { WebHttpError } from '@am92/web-http'
+
+export default function serviceActionCreator(traceActions, service) {
   return data => {
     return async (dispatch, getState) => {
-      if (actions.loading && typeof actions.loading === 'function') {
-        dispatch(actions.loading())
+      if (traceActions.loading && typeof traceActions.loading === 'function') {
+        dispatch(traceActions.loading())
       }
 
-      try {
-        const response = await service(data)
-        if (actions.success && typeof actions.success === 'function') {
-          dispatch(actions.success(response))
-        }
-        return response
-      } catch (error) {
-        if (actions.error && typeof actions.error === 'function') {
-          dispatch(actions.error(error))
+      const response = await service(data).catch(error => {
+        if (traceActions.error && typeof traceActions.error === 'function') {
+          dispatch(traceActions.error(error))
         }
         return error
+      })
+
+      if (traceActions.success && typeof traceActions.success === 'function') {
+        dispatch(traceActions.success(response))
       }
+      return response
     }
   }
 }
