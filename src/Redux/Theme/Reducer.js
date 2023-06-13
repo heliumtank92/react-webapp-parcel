@@ -7,7 +7,7 @@ const sliceOptions = {
   name: SLICE_NAME,
   initialState: INITIAL_STATE,
   reducers: {},
-  extraReducers: {}
+  extraReducers: builder => {}
 }
 
 const slice = createSlice(sliceOptions)
