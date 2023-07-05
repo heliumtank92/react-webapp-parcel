@@ -26,7 +26,11 @@ export default function serviceActionCreator(traceActions, service) {
         }
       })
 
-      if (traceActions.success && typeof traceActions.success === 'function') {
+      if (
+        !response._isCustomError &&
+        traceActions.success &&
+        typeof traceActions.success === 'function'
+      ) {
         dispatch(traceActions.success(response))
       }
 
@@ -58,7 +62,11 @@ async function retryWithTokenRotation(
     return error
   })
 
-  if (traceActions.success && typeof traceActions.success === 'function') {
+  if (
+    !response._isCustomError &&
+    traceActions.success &&
+    typeof traceActions.success === 'function'
+  ) {
     dispatch(traceActions.success(response))
   }
 

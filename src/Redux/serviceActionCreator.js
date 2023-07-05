@@ -14,7 +14,11 @@ export default function serviceActionCreator(traceActions, service) {
         return error
       })
 
-      if (traceActions.success && typeof traceActions.success === 'function') {
+      if (
+        !response._isCustomError &&
+        traceActions.success &&
+        typeof traceActions.success === 'function'
+      ) {
         dispatch(traceActions.success(response))
       }
       return response
