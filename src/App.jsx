@@ -11,7 +11,6 @@ import {
 
 import Loader from '~/src/Components/Loader'
 
-import { getThemeModeSelector } from '~/src/Redux/Theme/Selectors'
 import {
   getAccessTokenSelector,
   getRefreshTokenSelector
@@ -22,7 +21,12 @@ import getAppRouter from '~/src/Configurations/getAppRouter'
 
 import performHandshake from '~/src/Services/performHandshake'
 
-import { PALETTE, FONT_FAMILY } from '~/src/Constants/THEME'
+import {
+  PALETTE,
+  FONT_FAMILY,
+  THEME_MODE_STORAGE_KEY,
+  DEFAULT_THEME_MODE
+} from '~/src/Constants/THEME'
 
 class App extends Component {
   static propTypes = {
@@ -31,6 +35,14 @@ class App extends Component {
 
   state = {
     hasError: false
+  }
+
+  constructor(props) {
+    super(props)
+
+    // If you dont want to respect user selected theme
+    // and set default theme to one set in THEME constants then uncomment the line
+    // this.resetUserThemeToDefault()
   }
 
   componentDidMount() {
@@ -45,10 +57,13 @@ class App extends Component {
     }
   }
 
+  resetUserThemeToDefault = () => {
+    window.localStorage.removeItem(THEME_MODE_STORAGE_KEY)
+  }
+
   render() {
     const {
-      persisted,
-      themeMode
+      persisted
       // accessToken,
       // refreshToken
     } = this.props
@@ -59,7 +74,6 @@ class App extends Component {
     if (persisted) {
       const router = getAppRouter()
       children = <RouterProvider router={router} />
-      window.localStorage.setItem('mui-mode', themeMode)
 
       // asHttp.context.set(CONTEXT.ACCESS_TOKEN, accessToken)
       // asHttp.context.set(CONTEXT.REFRESH_TOKEN, refreshToken)
@@ -68,8 +82,8 @@ class App extends Component {
     return (
       <CssVarsProvider
         theme={AppTheme}
-        defaultMode={themeMode}
-        modeStorageKey="mui-mode"
+        defaultMode={DEFAULT_THEME_MODE}
+        modeStorageKey={THEME_MODE_STORAGE_KEY}
       >
         <DsCssBaseline enableColorScheme>
           <Suspense loading={<Loader />}>{children}</Suspense>
@@ -80,12 +94,10 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  const themeMode = getThemeModeSelector(state)
   const accessToken = getAccessTokenSelector(state)
   const refreshToken = getRefreshTokenSelector(state)
 
   return {
-    themeMode,
     accessToken,
     refreshToken
   }
