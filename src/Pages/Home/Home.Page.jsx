@@ -2,24 +2,21 @@ import React, { PureComponent } from 'react'
 import {
   DsBox,
   DsImage,
+  DsRemixIcon,
   DsTypography,
-  DsToggle,
-  DsRemixIcon
+  DsToggle
 } from '@am92/react-design-system'
 import withColorScheme from '~/src/Lib/withColorScheme'
 
 const homeImage = [
   {
-    src: new URL(
-      '~/public/assets/images/home.png?as=webp',
-      import.meta.url
-    ).href,
+    src: new URL('~/public/assets/images/home.png?as=webp', import.meta.url)
+      .href,
     alt: 'Home Image',
     as: 'image/webp'
   },
   {
-    src: new URL('~/public/assets/images/home.png', import.meta.url)
-      .href,
+    src: new URL('~/public/assets/images/home.png', import.meta.url).href,
     alt: 'Home Image',
     as: 'image/png'
   }
@@ -50,7 +47,7 @@ class HomePage extends PureComponent {
           width='100'
           height='100'
         />
-        <DsTypography variant='headingBoldItalicExtraLarge'>Home Page</DsTypography>
+        <DsTypography variant='displayBoldLarge'>Home Page</DsTypography>
         <DsBox
           sx={{
             display: 'flex',

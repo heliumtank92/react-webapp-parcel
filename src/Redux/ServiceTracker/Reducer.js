@@ -1,4 +1,6 @@
-export default function ServiceTrackerReducer (state = {}, action = {}) {
+import { Action } from 'redux'
+
+export default function ServiceTrackerReducer(state = {}, action) {
   const { type } = action
   const typeParts = type.split('/')
   const endingPart = typeParts.pop()

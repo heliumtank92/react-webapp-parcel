@@ -1,16 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { SLICE_NAME } from './Selectors'
 
-const INITIAL_STATE = { 
+const INITIAL_STATE = {
   isLoggedIn: false,
-  accessToken: '', 
+  accessToken: '',
   refreshToken: ''
 }
 
-const slice = createSlice({
+const sliceOptions = {
   name: SLICE_NAME,
   initialState: INITIAL_STATE,
-  extraReducers: {}
-})
+  reducers: {},
+  extraReducers: builder => {}
+}
+
+const slice = createSlice(sliceOptions)
 
 export default slice.reducer
